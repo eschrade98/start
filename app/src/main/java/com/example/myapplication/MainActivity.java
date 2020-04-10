@@ -34,17 +34,27 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Request Runtime permission
+
+        if(!checkPermissionFromDevice())
+            requestPermissions();
+
         //initial Buttons with ButtonIDs
         btnStartRecord = findViewById(R.id.btnStartRecord);
         btnStopRecord = findViewById(R.id.btnStopRecord);
         btnPlay = findViewById(R.id.btnPlay);
         btnStop = findViewById(R.id.btnStop);
 
-        if(checkPermissionFromDevice()){
+
 
             btnStartRecord.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    if(checkPermissionFromDevice())
+
+                    {
+
                     //TODO klappt nicht mit meinem Handy, hab keinen externen Speicher
                     pathSave = Environment.getExternalStorageDirectory()
                             .getAbsolutePath()+"/"
@@ -61,8 +71,12 @@ public class MainActivity extends AppCompatActivity  {
                     btnStop.setEnabled(false);
 
                     Toast.makeText(MainActivity.this, "Recording...", Toast.LENGTH_SHORT).show();
-                }
-            });
+                    }
+                    else{
+                        requestPermissions();
+                    }
+
+                });
 
             btnStopRecord.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -112,10 +126,13 @@ public class MainActivity extends AppCompatActivity  {
 
                 }
             });
-        }
-        else{
-            requestPermissions();
-        }
+
+
+
+
+
+
+            }
     }
 
     private void setupMediaRecorder() {
@@ -158,5 +175,5 @@ public class MainActivity extends AppCompatActivity  {
         return write_external_storage_result == PackageManager.PERMISSION_GRANTED &&
                 record_audio_result == PackageManager.PERMISSION_GRANTED;
     }
-
 }
+

@@ -10,13 +10,18 @@ import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
+import android.os.Environment;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import java.io.IOException;
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity  {
 
     //Variables
-    Button btnRecord, btnSopRecord, btnPlay, btnStop;
+    Button btnStartRecord, btnStopRecord, btnPlay, btnStop;
     String pathSave = "";
     MediaRecorder mediaRecorder;
     MediaPlayer mediaPlayer;
@@ -28,8 +33,34 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btnStartRecord = findViewById(R.id.btnStartRecord);
+        btnStopRecord = findViewById(R.id.btnStopRecord);
+        btnPlay = findViewById(R.id.btnPlay);
+        btnStop = findViewById(R.id.btnStop);
+
         if(checkPermissionFromDevice()){
-            
+
+            btnStartRecord.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //klappt nicht mit meinem Handy, hab keinen externen Speicher
+                    pathSave = Environment.getExternalStorageDirectory()
+                            .getAbsolutePath()+"/"
+                            +UUID.randomUUID().toString()+"_audio_record.3gp";
+                    setupMediaRecorder();
+                    try {
+                        mediaRecorder.prepare();
+                        mediaRecorder.start();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    btnPlay.setEnabled(false);
+                    btnStop.setEnabled(false);
+
+                    Toast.makeText(MainActivity.this, "Recording...", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
         else{
             requestPermissions();

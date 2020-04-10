@@ -11,52 +11,45 @@
         android:id="@+id/txtCoachSounds"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
         android:text="CoachSounds"
-        />
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/txtRecordArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
         android:text="Record Area"
-        />
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/btnStartRecord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Record"
-        />
+        android:text="Record" />
 
     <Button
         android:id="@+id/btnStopRecord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Stop Record"
-        />
+        android:text="Stop Record" />
 
     <TextView
         android:id="@+id/txtPlayArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
         android:text="Play Area"
-        />
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/btnPlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Play Record"
-        />
+        android:text="Play Record" />
 
     <Button
         android:id="@+id/btnStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Stop Record"
-        />
+        android:text="Stop Record" />
 
 </LinearLayout>

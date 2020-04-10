@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity  {
                     pathSave = Environment.getExternalStorageDirectory()
                             .getAbsolutePath()+"/"
                             +UUID.randomUUID().toString()+"_audio_record.3gp";
-                    setupMediaRecorder();
+
                     try {
                         mediaRecorder.prepare();
                         mediaRecorder.start();
@@ -93,10 +93,38 @@ public class MainActivity extends AppCompatActivity  {
                     Toast.makeText(MainActivity.this, "Playing...", Toast.LENGTH_SHORT).show();
                 }
             });
+
+            btnStop.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    btnStopRecord.setEnabled(false);
+                    btnStartRecord.setEnabled(true);
+                    btnStop.setEnabled(false);
+                    btnPlay.setEnabled(true);
+
+                    if(mediaPlayer != null)
+                    {
+                        mediaPlayer.stop();
+                        mediaPlayer.release();
+                        setupMediaRecorder();
+
+                    }
+
+                }
+            });
         }
         else{
             requestPermissions();
         }
+    }
+
+    private void setupMediaRecorder() {
+        mediaRecorder = new MediaRecorder();
+        mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        mediaRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
+        mediaRecorder.setOutputFile(pathSave);
+
     }
 
     //ask user for permissions

@@ -76,7 +76,9 @@ public class MainActivity extends AppCompatActivity  {
                         requestPermissions();
                     }
 
-                });
+                }
+
+            });
 
             btnStopRecord.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -127,12 +129,6 @@ public class MainActivity extends AppCompatActivity  {
                 }
             });
 
-
-
-
-
-
-            }
     }
 
     private void setupMediaRecorder() {

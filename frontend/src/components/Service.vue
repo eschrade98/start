@@ -3,8 +3,7 @@
     <h1>{{ msg }}</h1>
     <h2>REST service call results</h2>
 
-    <button @click="callHelloApi()">CALL Spring Boot REST backend service</button>
-
+    <b-button @click="callHelloApi()" variant="success">CALL Spring Boot REST backend service</b-button>
     <h4>Backend response: {{ backendResponse }}</h4>
 
   </div>
@@ -18,7 +17,7 @@
 
     data () {
       return {
-        msg: 'HowTo call REST-Services:',
+        msg: 'Was geht denn hier ab?:',
         backendResponse: [],
         errors: []
       }

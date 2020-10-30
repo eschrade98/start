@@ -24,7 +24,7 @@ public class BackendController {
     @RequestMapping(path = "/hello")
     public String sayHello() {
         LOG.info("GET called on /hello resource");
-        return HELLO_TEXT;
+        return "Das Backend iz da";
     }
 
     @RequestMapping(path = "/user/{lastName}/{firstName}", method = RequestMethod.POST)

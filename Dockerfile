@@ -16,7 +16,7 @@ RUN mvn clean install
 # Just using the build artifact and then removing the build-container
 FROM openjdk:11-jdk
 
-MAINTAINER Jonas Hecht
+MAINTAINER Jan Polifka
 
 VOLUME /tmp
 

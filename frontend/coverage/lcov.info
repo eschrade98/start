@@ -1,5 +1,5 @@
 TN:
-SF:C:\Users\jan_p\Documents\workspace\Private\spring-boot-vuejs\frontend\src\App.vue
+SF:C:\Users\jan_p\Documents\workspace\fiver\ws_baseapp\spring-boot-vuejs\frontend\src\App.vue
 FN:19,(anonymous_1)
 FNF:1
 FNH:1
@@ -11,7 +11,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:\Users\jan_p\Documents\workspace\Private\spring-boot-vuejs\frontend\src\components\User.vue
+SF:C:\Users\jan_p\Documents\workspace\fiver\ws_baseapp\spring-boot-vuejs\frontend\src\components\User.vue
 FN:27,(anonymous_1)
 FN:43,(anonymous_2)
 FN:45,(anonymous_3)
@@ -46,7 +46,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:\Users\jan_p\Documents\workspace\Private\spring-boot-vuejs\frontend\src\components\backend-api.js
+SF:C:\Users\jan_p\Documents\workspace\fiver\ws_baseapp\spring-boot-vuejs\frontend\src\components\backend-api.js
 FN:10,(anonymous_0)
 FN:13,(anonymous_1)
 FN:16,(anonymous_2)

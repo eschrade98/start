@@ -21,15 +21,6 @@
         </b-collapse>
 
         <b-btn v-b-toggle.collapse2_inner size="sm" id="btnHttpHeaders" variant="warning">HTTP Headers</b-btn>
-        <b-collapse id=collapse2_inner class="mt-2">
-
-          <p v-if="headers && headers.length">
-            <li v-for="header of headers">
-            <b-card>Header: {{ header.valueOf() }}</b-card>
-            </li>
-          </p>
-        </b-collapse>
-
         <b-btn v-b-toggle.collapse3_inner size="sm" variant="danger">Full Request configuration</b-btn>
         <b-collapse id=collapse3_inner class="mt-2">
           <p class="card-text">Config: {{ fullResponse.config }} </p>

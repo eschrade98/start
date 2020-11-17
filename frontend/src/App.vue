@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Hello</router-link> |
-      <router-link to="/callservice">Main</router-link> |
+      <router-link to="/callservice">This is your navbar!</router-link> |
       <router-link to="/bootstrap">Contact</router-link> |
       <!-- <router-link to="/user">User</router-link> |
       <router-link to="/login">Login</router-link> |
@@ -34,12 +34,12 @@ export default {
 }
 
 #nav {
-  padding: 30px;
+  padding: 25px;
   a {
     font-weight: bold;
     color: #2c3e50;
     &.router-link-exact-active {
-     color:  #1871d5;;
+     color:  #007bff;;
     }
   }
 }
